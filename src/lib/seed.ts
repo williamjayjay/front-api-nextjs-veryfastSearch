@@ -269,7 +269,7 @@ const countryList = [
   
     const populateDb = async () => {
       // @ts-expect-error
-      await redis.zadd('2terms', ...terms)
+      await redis.zadd('terms3', ...terms)
     }
   
     populateDb()

@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">⚡ Front + API de alta Performance (NextJS, Hono, Redis, Cloudflare Workers, typescript, ShadcnUI)</h1>
 
-## Getting Started
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/williamjayjay/front-api-nextjs-veryfastSearch">
 
-First, run the development server:
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/williamjayjay/front-api-nextjs-veryfastSearch" />
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/williamjayjay/front-api-nextjs-veryfastSearch">
+  
+  <a href="https://github.com/williamjayjay/Github-Blog/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/williamjayjay/front-api-nextjs-veryfastSearch">
+  </a>
+    
+   <a href="https://github.com/williamjayjay/front-api-nextjs-veryfastSearch/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/williamjayjay/front-api-nextjs-veryfastSearch?style=social">
+  </a>
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p align="center">Vamos construir juntos uma API bem rápida. Fazendo isso, você aprenderá como usar o Hono, uma estrutura web leve, Cloudflare Workers para código em servidor distribuído globalmente e Redis como um banco de dados rápido.<br/><strong>Está é apenas uma POC de API veloz com NextJS</strong>.</p>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<p align="center">
+<img alt="API veryfast" src="github/cover.jpeg" />
+</p>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🥶 Sobre o projeto
 
-## Learn More
+Desenvolvi esse projeto, baseado em estudos sobre o funcionamento da API Router com NextJS, aplicando também agumas tecnologias para deixar a busca mais rápida e destribuida globalmente assim diminuindo de fato a lentidão na busca dos países em um front-end simples com tailwind e shadcn-ui. 
 
-To learn more about Next.js, take a look at the following resources:
+## Página Web:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Web:** O front desenvolvido com NextJS, utiliza estilos com tailwind e os componentes com a biblioteca shadcn-ui.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 🚀 Tecnologias
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Principais tecnologias que utilizei para desenvolver esta aplicação web
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [TailwindCSS](https://tailwindcss.com/)
+- [Shadcn-UI](https://ui.shadcn.com/docs/installation/next)
+- [Hono](https://github.com/honojs/hono)
+- [Upstash-Redis](https://console.upstash.com/redis)
+- [Cloudflare](https://dash.cloudflare.com)
+
+
+## Guia de inicialização
+
+Para instalar e configurar uma cópia local, siga estas etapas simples:
+
+### Prerequisitos
+
+Para garantir o funcionamento adequado da nossa aplicação, verifique abaixo:
+
+1. **Clone o repositório**:
+   ```sh
+   git clone https://github.com/williamjayjay/front-api-nextjs-veryfastSearch
+   ```
+2. **Cadastrar no upstash-redis:** Crie o banco REDIS através deste [link aqui](https://console.upstash.com/redis)
+
+3. **Colar credenciais upstash:** Cole no arquivo .env e wrangler.toml as credenciais da URL e do TOKEN.
+
+4. **Rodar as SEEDS:** Rode a seed que contém o nome dos países, para salvar isso no nosso banco Redis.
+   ```sh
+   yarn tsx src/lib/seed.ts
+   ``` 
+
+5. **Instale os módulos com PNPM ou YARN:**
+  ```sh
+  # Instale usando yarn
+  yarn i
+  
+  # Instale usando pnpm
+  pnpm i
+  ```
+
+6. **Fazer deploy para cloudfare:** Suba a API em NEXTJS para a Cloudfare.
+```sh
+yarn deploy
+``` 
+
+7. **Rodar a aplicação com PNPM ou YARN:**
+  ```sh
+  # Instale usando yarn
+  yarn dev
+  
+  # Instale usando pnpm
+  pnpm dev
+  ```
+
+## Roadmap
+
+- [x] Fazer busca muito rápida por nomes de países salvos no banco REDIS online.
+    - [x] Exibir os milisegundos da busca
+
+- [x] Após o deploy na cloudfare, é possivel acessar a sua api, similar a route props a seguir: "suaurl.workers.dev/api/search?q=br"
+
+## WEB UX
+Desenvolvi a tela principal de forma simples para dar ênfase apenas na estrutura da busca veloz.
+
+
+<p align="center">
+  <img alt="Animated Web Demonstration" title="#Web" src="github/demo_bg.gif" >
+</p>
